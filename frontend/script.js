@@ -57,7 +57,30 @@ function removeData() {
 }
 
 // edit measurements from json server
-function updateData(id, weight, height, kcal) {
+function updateData() {
+  const id = document.getElementById('mySelect2').value;
+  
+  for (var i = 0; i < measurements.length; i++) {
+    if (id === measurements[i].id) {
+      var weight = measurements[i].weight;
+      var height = measurements[i].height;
+      var kcal = measurements[i].kcal;
+    }
+  }
+  const weightEd = document.getElementById('weight-edit').value;
+  const heightEd = document.getElementById('height-edit').value;
+  const kcalEd = document.getElementById('kcal-edit').value;
+  
+  if (weightEd !== null && weightEd !== "") {
+    weight = parseFloat(weightEd);
+  }
+  if (heightEd !== null && heightEd !== "") {
+    height = parseInt(heightEd);
+  }
+  if (kcalEd !== null && kcalEd !== "") {
+    kcal = parseInt(kcalEd);
+  }
+
   fetch(`${SERVER}/${id}`, {
     method: "PATCH",
     headers: {
@@ -69,9 +92,12 @@ function updateData(id, weight, height, kcal) {
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
+      console.log(measurements.length);
     })
     .catch((error) => console.log("Błąd: ", error));
+
 }
+
 
 // create select
 function selection() {
@@ -113,4 +139,4 @@ function selection2() {
 
 fetchData();
 //document.addEventListener("DOMContentLoaded", selection);
-//updateData(1,185,75,3000);
+//updateData();
