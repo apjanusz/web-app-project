@@ -1,56 +1,40 @@
 {
   "measurements": [
     {
-      "id": "1",
-      "bmi": 22.5
-    },
-    {
       "id": "2",
-      "bmi": 22
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
     },
     {
-      "id": 3,
-      "bmi": 23
+      "id": "4",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
     },
     {
-      "id": 4,
-      "bmi": 23
+      "id": "5",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
     },
     {
-      "id": 5,
-      "bmi": 23
+      "id": "6",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
     },
     {
-      "id": 6,
-      "bmi": 23
+      "id": "7",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
     },
     {
-      "id": 7,
-      "bmi": 23
-    },
-    {
-      "id": 8,
-      "bmi": 23
-    },
-    {
-      "id": 9,
-      "bmi": 23
-    },
-    {
-      "id": 10,
-      "bmi": 23
-    },
-    {
-      "id": 11,
-      "bmi": 23
-    },
-    {
-      "id": 12,
-      "bmi": 23
-    },
-    {
-      "id": 13,
-      "bmi": 23
+      "id": "8",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
     }
   ]
 }
