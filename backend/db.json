@@ -1,14 +1,8 @@
 {
   "measurements": [
     {
-      "id": "2",
-      "weight": 75,
-      "height": 178,
-      "kcal": 2000
-    },
-    {
       "id": "3",
-      "weight": 72,
+      "weight": 55,
       "height": 160,
       "kcal": 1500
     },
@@ -29,6 +23,42 @@
       "weight": 99,
       "height": 190,
       "kcal": 3100
+    },
+    {
+      "id": "20",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
+    },
+    {
+      "id": "21",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
+    },
+    {
+      "id": "22",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
+    },
+    {
+      "id": "23",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
+    },
+    {
+      "id": "24",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
+    },
+    {
+      "id": "25",
+      "weight": 80,
+      "height": 180,
+      "kcal": 2500
     }
   ]
 }

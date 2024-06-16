@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+
+  section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #dataManipulation {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    #dataManipulation {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f8f8f8;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #data-visual {
+    overflow-x: auto;
+  }
+  
+  #sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #sort table {
+    width: auto;
+  }
+  
+  #sort button {
+    margin: 0 5px;
+  }
+  
+  /* responsiveness */
+  @media (max-width: 767px) {
+    #sort {
+      flex-direction: column;
+    }
+  
+    #sort table {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #sort td {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    #sort button {
+      margin: 5px 0;
+      width: 100%;
+      max-width: 200px;
+    }
+    #tableHeader {
+        font-size: 20px;
+    }
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* animation  */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  header h1, section h2 {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  form table {
+    width: 100%;
+  }
+  
+  form td {
+    padding: 10px;
+  }
+  
+  form input {
+    width: calc(100% - 20px);
+  }
+  
+  form button {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+   #tableHeader {
+    text-align: center;
+   }
+   #head {
+    font-weight: 800;
+   }

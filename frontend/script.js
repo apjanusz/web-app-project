@@ -11,6 +11,9 @@ function fetchData() {
       selection();
       selection2();
       table();
+      minValues();
+      maxValues();
+      avgValues();
     })
     .catch((error) => console.log("Błąd: ", error));
 }
@@ -204,6 +207,107 @@ function sortTable(index) {
   }
 }
 
+// min values 
+function minValues()  {
+  var weight = document.getElementById("minW");
+  var minW = measurements[0].weight;
+  var kcal = document.getElementById("minK");
+  var minK = measurements[0].kcal;
+  var BMI = document.getElementById("minB");
+ 
+  for (var i = 0; i < measurements.length; i++) {
+    if(measurements[i].weight < minW) {
+      minW = measurements[i].weight;
+    }
+  }
+  for (var i = 0; i < measurements.length; i++) {
+    if(measurements[i].kcal < minK) {
+      minK = measurements[i].kcal;
+    }
+  }
 
+  var table = document.getElementById('myTable');
+  var rows = table.getElementsByTagName('tr');
+  var minB = Infinity;
+  for (var i = 1; i < rows.length; i++) {
+    var cells = rows[i].getElementsByTagName('td');
+    var bmi = parseFloat(cells[3].innerText);
+    if (bmi < minB) {
+      minB = bmi;
+    }
+  }
+
+  weight.innerHTML = minW;
+  kcal.innerHTML = minK;
+  BMI.innerHTML = minB;
+}
+
+// max values
+function maxValues()  {
+  var weight = document.getElementById("maxW")
+  var maxW = measurements[0].weight;
+  var kcal = document.getElementById("maxK")
+  var maxK = measurements[0].kcal;
+  var BMI = document.getElementById("maxB");
+
+  for (var i = 0; i < measurements.length; i++) {
+    if(measurements[i].weight > maxW) {
+      maxW = measurements[i].weight;
+    }
+  }
+  for (var i = 0; i < measurements.length; i++) {
+    if(measurements[i].kcal > maxK) {
+      maxK = measurements[i].kcal;
+    }
+  }
+
+  var table = document.getElementById('myTable');
+  var rows = table.getElementsByTagName('tr');
+  var maxB = 0;
+  for (var i = 1; i < rows.length; i++) {
+    var cells = rows[i].getElementsByTagName('td');
+    var bmi = parseFloat(cells[3].innerText);
+    if (bmi > maxB) {
+      maxB = bmi;
+    }
+  }
+
+  weight.innerHTML = maxW;
+  kcal.innerHTML = maxK;
+  BMI.innerHTML = maxB;
+
+}
+
+// average values 
+function avgValues()  {
+  var weight = document.getElementById("avgW")
+  var sumW = 0;
+  var kcal = document.getElementById("avgK")
+  var sumK = 0;
+  var BMI = document.getElementById("avgB");
+
+  for (var i = 0; i < measurements.length; i++) {
+    sumW += measurements[i].weight;
+  }
+  for (var i = 0; i < measurements.length; i++) {
+    sumK += measurements[i].kcal;
+  }
+
+  var table = document.getElementById('myTable');
+  var rows = table.getElementsByTagName('tr');
+  var sumB = 0;
+  for (var i = 1; i < rows.length; i++) {
+    var cells = rows[i].getElementsByTagName('td');
+    sumB += parseFloat(cells[3].innerText);
+  }
+
+  avgW = sumW/measurements.length;
+  avgK = sumK/measurements.length;
+  avgB = sumB/measurements.length;
+
+  weight.innerHTML = avgW.toFixed(1);
+  kcal.innerHTML = avgK.toFixed(0);
+  BMI.innerHTML = avgB.toFixed(2);
+}
 
 fetchData();

@@ -1,174 +1,213 @@
 <!DOCTYPE html>
+<html lang="pl">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dziennik twojego zdrowia</title>
   <script type="text/javascript" src="script.js"></script>
   <link rel="stylesheet" href="style.css" />
-  <h1>Dziennik twojego zdrowia</h1>
 </head>
 <body>
-  <section id="dataManipulation">
-    <div id="addData">
-      <h2>Dodawanie danych</h2>
-      <div class="data-input">
-        <form name="myform">
-          <table>
-            <tr class="weight">
-              <td>Wprowadz obecna wage:</td>
-              <td>
-                <input
-                  type="number"
-                  name="weight"
-                  id="weight"
-                  min="1"
-                  max="200"
-                  step="0.1"
-                  value="80"
-                />
-              </td>
-            </tr>
-            <tr class="height">
-              <td>Wprowadz obecny wzrost:</td>
-              <td>
-                <input
-                  type="number"
-                  name="height"
-                  id="height"
-                  min="1"
-                  max="250"
-                  step="1"
-                  value="180"
-                />
-              </td>
-            </tr>
-            <tr class="kcal">
-              <td>Ilosc spozytych kalorii</td>
-              <td>
-                <input
-                  type="number"
-                  name="kcal"
-                  id="kcal"
-                  min="500"
-                  max="5000"
-                  step="10"
-                  value="2500"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button onclick="addData();">Potwierdz</button>
-              </td>
-            </tr>
-          </table>
-        </form>
+  <header>
+    <h1>Dziennik twojego zdrowia</h1>
+  </header>
+  <main>
+    <section id="dataManipulation">
+      <div id="addData">
+        <h2>Dodawanie danych</h2>
+        <div class="data-input">
+          <form name="myform">
+            <table>
+              <tr class="weight">
+                <td>Wprowadz obecna wage:</td>
+                <td>
+                  <input
+                    type="number"
+                    name="weight"
+                    id="weight"
+                    min="1"
+                    max="200"
+                    step="0.1"
+                    value="80"
+                  />
+                </td>
+              </tr>
+              <tr class="height">
+                <td>Wprowadz obecny wzrost:</td>
+                <td>
+                  <input
+                    type="number"
+                    name="height"
+                    id="height"
+                    min="1"
+                    max="250"
+                    step="1"
+                    value="180"
+                  />
+                </td>
+              </tr>
+              <tr class="kcal">
+                <td>Ilosc spozytych kalorii</td>
+                <td>
+                  <input
+                    type="number"
+                    name="kcal"
+                    id="kcal"
+                    min="500"
+                    max="5000"
+                    step="10"
+                    value="2500"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button onclick="addData();">Potwierdz</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
       </div>
-    </div>
-    <div id="removeData">
-      <h2>Usuwanie danych</h2>
-      <div id="data-input">
-        <form name="myform2">
-          <table>
-            <tr id="select-id-rm">
-              <td>Wybierz ID:</td>
-              <td>
-                <div id="myDiv"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button onclick="removeData();">Usun</button>
-              </td>
-            </tr>
-          </table>
-        </form>
+      <div id="removeData">
+        <h2>Usuwanie danych</h2>
+        <div id="data-input">
+          <form name="myform2">
+            <table>
+              <tr id="select-id-rm">
+                <td>Wybierz ID:</td>
+                <td>
+                  <div id="myDiv"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button onclick="removeData();">Usun</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
       </div>
-    </div>
-    <div id="editData">
-      <h2>Edycja danych</h2>
-      <div id="data-input">
-        <form name="myform3">
-          <table>
-            <tr id="select-id-ed">
-              <td>Wybierz ID:</td>
-              <td>
-                <div id="myDiv2"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Wprowadz nowa wage:</td>
-              <td>
-                <input
-                  type="number"
-                  name="weight-edit"
-                  id="weight-edit"
-                  min="1"
-                  max="200"
-                  step="0.1"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Wprowadz nowy wzrost:</td>
-              <td>
-                <input
-                  type="number"
-                  name="height-edit"
-                  id="height-edit"
-                  min="1"
-                  max="250"
-                  step="1"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Wprowadz nowe kalorie:</td>
-              <td>
-                <input
-                  type="number"
-                  name="kcal-edit"
-                  id="kcal-edit"
-                  min="500"
-                  max="5000"
-                  step="10"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button onclick="updateData();">Edytuj</button>
-              </td>
-            </tr>
-          </table>
-        </form>
+      <div id="editData">
+        <h2>Edycja danych</h2>
+        <div id="data-input">
+          <form name="myform3">
+            <table>
+              <tr id="select-id-ed">
+                <td>Wybierz ID:</td>
+                <td>
+                  <div id="myDiv2"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>Wprowadz nowa wage:</td>
+                <td>
+                  <input
+                    type="number"
+                    name="weight-edit"
+                    id="weight-edit"
+                    min="1"
+                    max="200"
+                    step="0.1"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Wprowadz nowy wzrost:</td>
+                <td>
+                  <input
+                    type="number"
+                    name="height-edit"
+                    id="height-edit"
+                    min="1"
+                    max="250"
+                    step="1"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Wprowadz nowe kalorie:</td>
+                <td>
+                  <input
+                    type="number"
+                    name="kcal-edit"
+                    id="kcal-edit"
+                    min="500"
+                    max="5000"
+                    step="10"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button onclick="updateData();">Edytuj</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
-  <section id="data-visual">
-    <div>
-      <table id="myTable">
-        <tr>
-          <th>ID</th>
-          <th>Waga</th>
-          <th>Wzrost</th>
-          <th>BMI</th>
-          <th>Kalorie</th>
-        </tr>
-      </table>
-    </div>
-    <br />
-    <div id="sort">
-      <table>
-        <tr>
-          Sortuj tabele względem:
-          <td>
-            <button onclick="sortTable(0);">ID</button>
-            <button onclick="sortTable(1);">Waga</button>
-            <button onclick="sortTable(2);">Wzrost</button>
-            <button onclick="sortTable(3);">BMI</button>
-            <button onclick="sortTable(4);">Kalorie</button>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </section>
+    </section>
+    <section id="data-visual">
+      <div>
+        <h2 id="tableHeader">Wizualizacja danych w postaci tabeli</h2>
+        <table id="myTable">
+          <tr>
+            <th>ID</th>
+            <th>Waga</th>
+            <th>Wzrost</th>
+            <th>BMI</th>
+            <th>Kalorie</th>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <div id="sort">
+        <table>
+          <tr>
+            Sortuj tabele względem:
+            <td>
+              <button onclick="sortTable(0);">ID</button>
+              <button onclick="sortTable(1);">Waga</button>
+              <button onclick="sortTable(2);">Wzrost</button>
+              <button onclick="sortTable(3);">BMI</button>
+              <button onclick="sortTable(4);">Kalorie</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <br>
+      <div>
+        <table>
+          <tr>
+            <th></th>
+            <th>Waga</th>
+            <th>BMI</th>
+            <th>Kalorie</th>
+          </tr>
+          <tr>
+            <td id="head">Najwieksza wartosc</td>
+            <td id="maxW"></td>
+            <td id="maxB"></td>
+            <td id="maxK"></td>
+          </tr>
+          <tr id="min">
+            <td id="head">Najmniejsza wartosc</td>
+            <td id="minW"></td>
+            <td id="minB"></td>
+            <td id="minK"></td>
+          </tr>
+          <tr id="avg">
+            <td id="head">Srednia wartosc</td>
+            <td id="avgW"></td>
+            <td id="avgB"></td>
+            <td id="avgK"></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
 </body>
-<footer></footer>
+</html>
